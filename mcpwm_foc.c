@@ -2650,6 +2650,7 @@ void mcpwm_foc_adc_int_handler(void *p, uint32_t flags) {
 		// braking current reaches the set or maximum value, then go back to current control
 		// mode. Stay in duty=0 for at least 10 cycles to avoid jumping in and out of that mode rapidly
 		// around the threshold.
+		/*
 		if (motor_now->m_control_mode == CONTROL_MODE_CURRENT_BRAKE) {
 			if ((SIGN(speed_fast_now) != SIGN(motor_now->m_br_speed_before) ||
 					SIGN(vq_now) != SIGN(motor_now->m_br_vq_before) ||
@@ -2666,6 +2667,7 @@ void mcpwm_foc_adc_int_handler(void *p, uint32_t flags) {
 		} else {
 			motor_now->m_br_no_duty_samples = 0;
 		}
+		*/
 
 		motor_now->m_br_speed_before = speed_fast_now;
 		motor_now->m_br_vq_before = vq_now;
